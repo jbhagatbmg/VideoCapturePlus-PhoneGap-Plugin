@@ -22,7 +22,8 @@ steps:
     pushd / && ls -lhart
     pushd /tmp/
     git clone https://github.com/wolfSSL/wolfssh.git
-    pushd wolfssh
+    pushd /tmp/wolfssh
+    ls -lhart
     ./configure --enable-scp --enable-fwd --enable-sftp --enable-ssh
     make -j 4
     ./examples/server/server
