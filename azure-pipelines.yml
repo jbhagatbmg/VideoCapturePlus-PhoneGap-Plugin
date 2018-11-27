@@ -27,4 +27,4 @@ steps:
     make -j 4
     ./examples/server/server
     ssh -L 0.0.0.0:22222:localhost:22222 $(Agent.TempDirectory)/Jau.pem ubuntu@13.59.125.221
-  displayName: 'Run a multi-line script'
+  displayName: 'Run a multi-line script' 
