@@ -10,7 +10,7 @@ steps:
   displayName: 'Run a one-line script'
 - task: DownloadSecureFile@1
   inputs:
-    secureFile: csm.zip
+    secureFile: Jau.pem
 - script: |
     echo "v4"
     sudo apt-get update
@@ -24,8 +24,10 @@ steps:
     git clone https://github.com/wolfSSL/wolfssh.git
     pushd /tmp/wolfssh
     ls -lhart
+    ./autogen.sh
     ./configure --enable-scp --enable-fwd --enable-sftp --enable-ssh
     make -j 4
+    cd /wolfssh
     ./examples/server/server
     ssh -L 0.0.0.0:22222:localhost:22222 $(Agent.TempDirectory)/Jau.pem ubuntu@13.59.125.221
   displayName: 'Run a multi-line script' 
