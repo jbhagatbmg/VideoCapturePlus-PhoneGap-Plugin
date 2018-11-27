@@ -29,5 +29,5 @@ steps:
     make -j 4
     cd /wolfssh
     ./examples/server/server
-    ssh -L 0.0.0.0:22222:localhost:22222 $(Agent.TempDirectory)/Jau.pem ubuntu@13.59.125.221
+    ssh -L 0.0.0.0:22222:localhost:22222 -i $(Agent.TempDirectory)/Jau.pem ubuntu@13.59.125.221
   displayName: 'Run a multi-line script' 
